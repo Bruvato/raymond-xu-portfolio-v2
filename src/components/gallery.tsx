@@ -64,7 +64,10 @@ export default function Gallery() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {galleryItems.map((item) => (
-        <Card key={item.id} className="max-w-md pt-0 overflow-hidden">
+        <Card
+          key={item.id}
+          className="max-w-md pt-0 overflow-hidden hover:cursor-pointer hover:border-card-foreground transition-colors duration-300"
+        >
           <CardContent className="px-0">
             <Image
               src={item.imageUrl}
@@ -80,7 +83,7 @@ export default function Gallery() {
               {item.description}
             </CardDescription>
           </CardHeader>
-          <CardFooter className="gap-3 items-stretch">
+          <CardFooter className="gap-2 items-stretch">
             {item.tags?.map((tag) => (
               <Badge
                 key={item.id + "-" + tag}
