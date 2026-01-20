@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Analytics } from "@vercel/analytics/next";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
-  title: "Ray Xu's Portfolio",
+  title: "Raymond Xu's Portfolio",
   description: "Portfolio",
 };
 
@@ -25,6 +26,7 @@ export default function RootLayout({
           {children}
           <Analytics />
         </ThemeProvider>
+        <Toaster position="top-center" />
       </body>
     </html>
   );
